@@ -33,23 +33,43 @@ function slideToNext() {
     } else {
         currentIndex = 0; // Loop back to the start
     }
-    sliderContainer.style.transform = `translateX(-${currentIndex * (320)}px)`; // Adjust based on card width + gap
+    sliderContainer.style.transform = `translateX(-${currentIndex * 320}px)`; // Adjust based on card width + gap
 }
 
 // Automatic sliding every 3 seconds
-setInterval(slideToNext, 3000); // Change slides every 3 seconds
+const autoSlide = setInterval(slideToNext, 3000); // Change slides every 3 seconds
 
 // Manual sliding functionality
 nextBtn.addEventListener('click', () => {
-    if (currentIndex < totalCards - visibleCards) { // Show only 3 cards at a time
+    if (currentIndex < totalCards - visibleCards) {
         currentIndex++;
-        sliderContainer.style.transform = `translateX(-${currentIndex * 320}px)`; // Adjust based on card width + gap
+    } else {
+        currentIndex = 0; // Loop back to the start
     }
+    sliderContainer.style.transform = `translateX(-${currentIndex * 320}px)`; // Adjust based on card width + gap
+    resetAutoSlide(); // Reset auto-slide timer after manual control
 });
 
 prevBtn.addEventListener('click', () => {
     if (currentIndex > 0) {
         currentIndex--;
-        sliderContainer.style.transform = `translateX(-${currentIndex * 320}px)`; // Adjust based on card width + gap
+    } else {
+        currentIndex = totalCards - visibleCards; // Loop back to the last set
     }
+    sliderContainer.style.transform = `translateX(-${currentIndex * 320}px)`; // Adjust based on card width + gap
+    resetAutoSlide(); // Reset auto-slide timer after manual control
+});
+
+// Reset auto-slide timer when manually controlled
+function resetAutoSlide() {
+    clearInterval(autoSlide);
+    setInterval(slideToNext, 3000);
+}
+
+// JavaScript for toggling the menu
+const toggleMenu = document.querySelector('.toggle-menu');
+const navMenu = document.querySelector('nav ul');
+
+toggleMenu.addEventListener('click', function() {
+    navMenu.classList.toggle('active');
 });
