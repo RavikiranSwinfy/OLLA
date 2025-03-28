@@ -1,0 +1,780 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(135deg, #283593, #512DA8);
+    color: white;
+    min-height: 100vh;
+}
+
+header {
+    padding: 20px;
+    background: rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+/* Hover effect for nav links */
+.nav-links li a:hover {
+    color: #4ADE80;
+}
+
+.auth-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.login-btn, .signup-btn {
+    background-color: #3B82F6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.signup-btn {
+    background-color: white;
+    color: #3B82F6;
+}
+
+/* Hover effect for buttons */
+.login-btn:hover {
+    background-color: #d5f506;
+}
+
+.signup-btn:hover {
+    background-color: #d5f506;
+    color: white;
+}
+
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+    background: linear-gradient(135deg, #283593, #512DA8);
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero-content h1 span {
+    color: #4ADE80;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 40px;
+    line-height: 1.6;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+.explore-btn, .premium-btn {
+    background-color: #3B82F6;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+.premium-btn {
+    background-color: #3B82F6;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1rem;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, opacity 0.3s ease;
+}
+
+/* Hover effect for buttons */
+.explore-btn:hover {
+    background-color: #77eb25;
+}
+
+.premium-btn:hover {
+    background-color: #77eb25;
+    color: #3B82F6;
+    border-color: #3B82F6;
+}
+
+.logo img {
+    width: 40px; /* Adjust width as per your need */
+    height: 40px; /* Adjust height as per your need */
+    object-fit: contain; /* Ensures the image maintains its aspect ratio */
+}
+
+/* Stats Section */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 0;
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+}
+
+.stats-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+.number {
+    font-size: 3rem;
+    color: #3B82F6;
+}
+
+.stats-item p {
+    margin-top: 10px;
+    font-size: 1rem;
+    color: #666;
+}
+.featured-courses {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #f9f9f9;
+    color: #050505;
+  }
+  
+  .section-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .section-subtitle {
+    font-size: 1.2em;
+    color: #050505;
+    margin-bottom: 40px;
+  }
+  
+/* General styling for the card slider */
+.course-slider {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin: 20px 0;
+  }
+  
+  /* Container to hold all cards */
+  .slider-container {
+    display: flex;
+    gap: 20px;
+    transition: transform 0.5s ease-in-out;
+    width: calc(300px * 5 + 80px); /* Adjust for the total number of cards + gap */
+  }
+  
+  /* Course card styles */
+  .course-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 300px; /* Card width */
+    padding: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .course-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Course image styling */
+  .course-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+  }
+  
+  .course-labels {
+    display: flex;
+    gap: 10px;
+    padding: 15px;
+  }
+  
+  .label {
+    background-color: #e0e0e0;
+    border-radius: 20px;
+    padding: 5px 10px;
+    font-size: 0.9em;
+  }
+  
+  .data-science { background-color: #d0eaff; }
+  .beginner { background-color: #e3cfff; }
+  .machine-learning { background-color: #d1f0d1; }
+  .advanced { background-color: #ffcccb; }
+  .premium { background-color: #ffe399; }
+  .big-data { background-color: #d1d1ff; }
+  .intermediate { background-color: #f0dfff; }
+  
+  .course-title {
+    font-size: 1.5em;
+    margin: 15px;
+  }
+  
+  .course-description {
+    padding: 0 15px;
+    font-size: 1em;
+    color: #666;
+  }
+  
+  .course-details {
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 15px;
+    font-size: 0.9em;
+    color: #888;
+  }
+  
+  .course-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px;
+    background-color: #f9f9f9;
+  }
+  .price {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
+  }  
+  /* Button to enroll in the course */
+  .enroll-btn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+  }
+  
+  .enroll-btn:hover {
+    background-color: #0056b3;
+  }
+ /* Buttons for sliding left and right */
+.prev-btn, .next-btn {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+  }
+  
+  .prev-btn {
+    left: 10px;
+  }
+  
+  .next-btn {
+    right: 10px;
+  }
+  
+  .prev-btn:hover, .next-btn:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+  } 
+  .testimonial-section {
+    text-align: center;
+    padding: 50px 20px;
+    background-color: #f7f7f7;
+}
+
+.testimonial-section h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.testimonials-container {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.testimonial-card {
+    position: relative;
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 20px;
+    width: 250px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    text-decoration: none;
+    color: inherit;
+    transition: transform 0.3s ease;
+}
+
+.testimonial-card:hover {
+    transform: scale(1.05);
+}
+
+.testimonial-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+    border: 3px solid #ff6f61;
+}
+
+.testimonial-card p {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.testimonial-card h4 {
+    font-size: 18px;
+    color: #ff6f61;
+    margin-bottom: 5px;
+}
+
+.testimonial-card span {
+    font-size: 14px;
+    color: #666;
+}
+
+.play-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40px;
+    height: 40px;
+    background-image: url('data:image/png;base64,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'); /* Play icon URL */
+    background-size: cover;
+    opacity: 0.3;
+}
+/* Add this to your existing CSS file */
+.recognized-section {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.recognized-section h2 {
+    font-size: 28px;
+    color: #333;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.recognized-section h2:after {
+    content: '';
+    display: block;
+    margin: 8px auto;
+    width: 50px;
+    height: 2px;
+    background-color: #007bff; /* Change this color if necessary */
+}
+
+.logo-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.logo-item {
+    text-align: center;
+    width: 150px; /* Adjust as needed */
+}
+
+.logo-item img {
+    width: 80px; /* Adjust icon size */
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.logo-item p {
+    font-size: 16px;
+    color: #333;
+    margin: 0;
+}
+/* Section styling */
+.companies-section {
+    text-align: center;
+    margin: 40px 0;
+    background-color: #f4f4f4; /* Optional background */
+    padding: 20px;
+}
+
+.companies-section h2 {
+    font-size: 32px;
+    color: #333;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.companies-section h2:after {
+    content: '';
+    display: block;
+    margin: 8px auto;
+    width: 50px;
+    height: 2px;
+    background-color: #007bff; /* Change to your preferred color */
+}
+
+/* Slider container */
+.slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Track for sliding logos */
+.slide-track {
+    display: flex;
+    width: calc(250px * 14); /* Adjust based on the number of logos */
+    animation: scroll 20s linear infinite;
+}
+
+/* Each slide */
+.slide {
+    width: 250px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.slide img {
+    width: 100px; /* Adjust the logo size */
+    height: auto;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.slide img:hover {
+    opacity: 1; /* Full opacity on hover */
+}
+
+/* Animation */
+@keyframes scroll {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateX(calc(-250px * 7)); /* Adjust based on the number of logos */
+    }
+}
+/* Contact Section Styling */
+.contact-section {
+    background-color: #f0f0f0;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 36px;
+    color: #333;
+    margin-bottom: 20px;
+    position: relative;
+    display: inline-block;
+}
+
+.contact-section h2:after {
+    content: '';
+    display: block;
+    margin: 10px auto;
+    width: 60px;
+    height: 3px;
+    background-color: #007bff; /* Change to your preferred color */
+}
+
+.contact-section p {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 40px;
+}
+
+/* Contact Form Styling */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+    display: block;
+}
+
+.form-group input, .form-group textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+.form-group input:focus, .form-group textarea:focus {
+    border-color: #007bff;
+}
+
+.submit-button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    width: 100%;
+}
+
+.submit-button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .contact-form {
+        padding: 20px;
+    }
+
+    .contact-section h2 {
+        font-size: 28px;
+    }
+
+    .contact-section p {
+        font-size: 16px;
+    }
+}
+/* General body and HTML styling to ensure the footer stays at the bottom */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Make sure all content above the footer takes the remaining available height */
+body {
+    flex: 1;
+}
+
+/* Full-width footer section */
+.footer {
+    background-color: #1b1f29;
+    color: #d1d5db;
+    padding: 40px 0;
+    width: 100%;
+    margin-top: auto; /* Push footer to the bottom */
+}
+
+/* Make the container 100% width and ensure the content is centered */
+.container {
+    width: 100%;
+    padding: 0;
+}
+
+/* Flexbox for footer content */
+.footer-content {
+    display: flex;
+    justify-content: space-around; /* Space between sections */
+    flex-wrap: wrap;
+    padding: 0 50px; /* Ensures padding on both sides */
+    max-width: 100%; /* Makes sure content fills the screen width */
+}
+
+/* Footer sections (about, quick links, contact info, newsletter) */
+.footer-section {
+    width: 23%;
+    min-width: 200px;
+    color: #9ca3af;
+}
+
+/* Headings in the footer sections */
+.footer-section h3 {
+    color: #fff;
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+/* Paragraph and links */
+.footer-section p, .footer-section ul li a {
+    color: #9ca3af;
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+/* Unordered list for links in the footer */
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+/* Links hover effect */
+.footer-section ul li a {
+    text-decoration: none;
+    color: inherit;
+    transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+    color: #fff;
+}
+
+/* Footer logo image */
+.footer-logo {
+    width: 50px;
+    margin-bottom: 20px;
+}
+
+/* Social media icons */
+.social-icons a {
+    color: #9ca3af;
+    font-size: 18px;
+    margin-right: 15px;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #fff;
+}
+
+/* Contact icons color (email, phone, etc.) */
+.contact i {
+    color: #3b82f6;
+    margin-right: 10px;
+}
+
+/* Newsletter form */
+.subscribe-form {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Newsletter input */
+.subscribe-form input {
+    padding: 10px;
+    background-color: #2d3345;
+    border: none;
+    color: #fff;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+/* Subscribe button */
+.subscribe-form button {
+    padding: 10px;
+    background-color: #3b82f6;
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 5px;
+}
+
+.subscribe-form button:hover {
+    background-color: #2563eb;
+}
+
+/* Footer bottom section with copyright and links */
+.footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 20px 50px;
+    border-top: 1px solid #374151;
+    color: #9ca3af;
+}
+
+.footer-bottom p {
+    margin: 0;
+}
+
+.footer-bottom ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-bottom ul li {
+    margin-right: 20px;
+}
+
+.footer-bottom ul li a {
+    color: #9ca3af;
+    text-decoration: none;
+}
+
+.footer-bottom ul li a:hover {
+    color: #fff;
+}
